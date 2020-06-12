@@ -23,3 +23,10 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+// Route.get('/courses', 'CoursesController.index')
+// Route.get('/course/:id', 'CoursesController.show')
+// Route.post('/course', 'CoursesController.store')
+// Route.put('/course/:id', 'CoursesController.update')
+// Route.delete('/course/:id', 'CoursesController.delete')
+Route.resource('/courses', 'CoursesController').only(['index', 'show', 'store', 'update', 'delete'])
